@@ -197,7 +197,7 @@ export default {
   },
   async mounted() {
     // eslint-disable-next-line no-undef
-    const files = await spinal.spinalSystem.load('/etc/Organs/powerbat');
+    const files = await spinal.spinalSystem.load('/etc/Organs/innvia');
     const organ = await this.getLinkedOrgan();
     for (let idx = 0; idx < files.length; idx++) {
       const file = files[idx];

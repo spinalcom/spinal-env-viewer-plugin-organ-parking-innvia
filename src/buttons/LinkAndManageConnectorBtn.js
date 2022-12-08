@@ -29,7 +29,7 @@ const {
 } = require('spinal-env-viewer-panel-manager-service');
 import { CONTROL_POINT_TYPE } from 'spinal-env-viewer-plugin-control-endpoint-service';
 
-const LABEL = 'Link And Manage Connector';
+const LABEL = 'Link And Manage Innvia Connector';
 export class LinkAndManageConnectorBtn extends SpinalContextApp {
   constructor() {
     super(LABEL, LABEL, {
@@ -44,11 +44,7 @@ export class LinkAndManageConnectorBtn extends SpinalContextApp {
 
   isShown(option) {
     if (
-      (option.selectedNode === option.context &&
-        option.selectedNode.type.get() ===
-          `${CONTROL_POINT_TYPE}GroupContext`) ||
-      option.selectedNode.type.get() === `BmsEndpointGroupContext` ||
-      option.selectedNode.type.get() === `Network`
+      (option.selectedNode === option.context && option.selectedNode.type.get() === `Network`)
     ) {
       return Promise.resolve(true);
     }
